@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.nav-item {
+    font-size: 1.3rem;
+    padding: 1px 20px;  
+    border: 1px solid #646d7c;
+    margin: 0 10px !important;
+}
+.active {
+    background-color: #49505F;
+}
+.nav-link{
+    color: #fff !important;
+    text-transform: capitalize;
+}
+.navbar {
+    background-color: #383E4C !important;
+    text-align: center;
+}
