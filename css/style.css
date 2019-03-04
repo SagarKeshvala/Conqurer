@@ -17,5 +17,8 @@
 }
 .navbar {
     background-color: #383E4C !important;
-    text-align: center;
+}
+
+.navbar-nav {
+    margin: 0 auto;
 }
