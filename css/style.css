@@ -98,6 +98,7 @@ header {
 .card-text-container {
     padding: 2rem;
     text-align: left;
+    background-color: #f2f2f2;
 }
 
 .card-body button {
@@ -106,4 +107,85 @@ header {
     border-radius: .5rem;
     margin-top: 2rem;
     margin-left: 22%;
+}
+
+.big-card-body {
+    background-color: #f2f2f2;
+    margin-top: 6rem;
+}
+
+.big-card-body img {
+    width: 100%;
+}
+
+.big-card-text {
+    padding: 2rem;
+    text-align: left;
+    font-size: 1.4rem;
+}
+
+.big-card-title {
+    font-weight: 800;
+    text-align: center;
+    color: #666666;
+}
+
+.services {
+    height: 35vh;
+    background-image: url(/img/bg-2.jpg);
+    background-size: cover;
+    background-position: center;
+    margin-top: 6rem;
+}
+
+.service-title {
+    color: #fff;
+    font-size: 4rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    text-shadow: 1px 1px 2px #ffffff;
+    margin-top: 8rem;
+}
+
+.service-p {
+    color: #fff;
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+
+.small-card-body {
+    margin-top: 15rem;
+    background-color: #f2f2f2;
+}
+
+.small-card-body img {
+    width: 100%;
+}
+
+.small-card-title {
+    margin-top: 2rem;
+    font-weight: 800;
+    color: #666666;
+}
+.small-card-text {
+    font-size: 1.4rem;
+    margin-top: 1rem;
+}
+
+.mega-card-title {
+    font-size: 2rem;
+    color: #666666;
+    margin-top: 2rem;
+    margin-bottom: .5rem;
+    margin-left: 2rem;
+}
+
+.mega-link {
+    margin-left: 2rem;
+    font-size: 1.6rem;
+    border: 1px solid #49505F;
+    padding: 1rem 3rem;
+    border-radius: 1.2rem;
+    color: #666666;
+    margin-bottom: 3rem;
 }
