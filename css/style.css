@@ -131,11 +131,14 @@ header {
 }
 
 .services {
+    margin-top: 6rem;
+}
+
+.service-head {
     height: 35vh;
     background-image: url(/img/bg-2.jpg);
     background-size: cover;
     background-position: center;
-    margin-top: 6rem;
 }
 
 .service-title {
@@ -143,7 +146,7 @@ header {
     font-size: 4rem;
     font-weight: 400;
     text-transform: capitalize;
-    text-shadow: 1px 1px 2px #ffffff;
+    text-shadow: 1px 1px 2px #000000;
     margin-top: 8rem;
 }
 
@@ -188,4 +191,54 @@ header {
     border-radius: 1.2rem;
     color: #666666;
     margin-bottom: 3rem;
+}
+
+.contact {
+    background-image: url(/img/bg-3.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 5rem;
+    padding: 4rem;
+}
+
+.contact-p {
+    color: #000;
+    font-size: 1.7rem;
+    margin-top: 2rem;
+    background-color: rgba(242, 242, 242, 0.452);
+    pading: 1rem;
+    border-radius: .5rem;
+}
+
+input, textarea {
+    display: block;
+    font-size: 2rem;
+    border: none;
+    background-color: rgba(242, 242, 242, 0.452);
+    padding: .4rem;
+    border-radius: .5rem;
+    color: #000;
+    margin: 4rem;
+    width: 100%;
+}
+
+.submit {
+    font-size: 1.8rem;
+    padding: .5rem 2.5rem;
+    border-radius: .5rem;
+    margin: 0 auto;
+}
+.contact-form-left {
+    float: right;
+}
+
+.contact-form-left {
+    float: left;
+}
+
+footer {
+    padding: 2rem;
+    font-size: 1.5rem;
+    color: #666666;
 }
