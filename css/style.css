@@ -43,8 +43,8 @@ html {
 
 header {
     width: 100vw;
-    height: 59vh;
-    background: url(/img/bg-1.jpg) no-repeat;
+    height: 63vh;
+    /*background: url(/img/bg-1.jpg) no-repeat;*/
     background-size: cover;
     background-position:center;
     position: relative;
@@ -136,7 +136,8 @@ header {
 
 .service-head {
     height: 35vh;
-    background-image: url(/img/bg-2.jpg);
+    width: 100%;
+    /*background-image: url(/img/bg-2.jpg);*/
     background-size: cover;
     background-position: center;
 }
@@ -194,7 +195,7 @@ header {
 }
 
 .contact {
-    background-image: url(/img/bg-3.jpg);
+    /*background-image: url(/img/bg-3.jpg);*/
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;

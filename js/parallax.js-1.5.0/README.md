@@ -6,35 +6,112 @@ Simple parallax scrolling effect inspired by [Spotify.com](http://spotify.com/) 
 
 ## Installation
 
-Download and include `parallax.min.js` in your document after including jQuery.
+### NPM
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="/path/to/parallax.js"></script>
+```bash
+npm i --save jquery-parallax.js
+```
+
+### Yarn
+
+```bash
+yarn add jquery-parallax.js
+```
+
+### Bower
+
+Please note that although Bower is still maintained, they recommend Yarn for new projects.
+
+```bash
+$ bower i --save parallax.js
+```
+
+### Setup
+
+Include `parallax.min.js` in your document after including jQuery (compatible with jQuery >= 1.7).
+
+```html
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/path/to/parallax.min.js"></script>
+```
+
+Use these CDN links, provided by jsDelivr.com
+```html
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+```
 
 ## Usage
+
+Please note, that `<!DOCTYPE html>` on top of your document is required!
 
 ### Via data attributes
 
 To easily add a parallax effect behind an element, add `data-parallax="scroll"` to the element you want to use, and specify an image with `data-image-src="/path/to/image.jpg"`.
 
-	<div class="parallax-window" data-parallax="scroll" data-image-src="/path/to/image.jpg"></div>
+```html
+<div class="parallax-window" data-parallax="scroll" data-image-src="/path/to/image.jpg"></div>
+```
 
 ### Via JavaScript
 
 To call the parallax plugin manually, simply select your target element with jQuery and do the following:
 
-	$('.parallax-window').parallax({imageSrc: '/path/to/image.jpg'});
+```javascript
+$('.parallax-window').parallax({imageSrc: '/path/to/image.jpg'});
+```
 
 ### Notes
 
-What parallax.js will do is create a fixed-position element for each parallax image at the start of the document's body. This mirror element will sit behind the other elements and match the position and dimensions of its target object.
+What parallax.js will do is create a fixed-position element for each parallax image at the start of the document's body (or another configurable container). This mirror element will sit behind the other elements and match the position and dimensions of its target object.
 
 Due to the nature of this implementation, you must ensure that these parallax objects and any layers below them are transparent so that you can see the parallax effect underneath.  Also, if there is no other content in this element, you will need to ensure that it has some fixed dimensions otherwise you won't see anything.
 
-	.parallax-window {
-		min-height: 400px;
-		background: transparent;
-	}
+```css
+.parallax-window {
+	min-height: 400px;
+	background: transparent;
+}
+```
+
+Also, keep in mind that once initialized, the parallax plugin presumes a fixed page layout unless it encounters a `scroll` or `resize` event.  If you have a dynamic page in which another javascript method may alter the DOM, you must manually refresh the parallax effect with the following commands:
+
+```javascript
+jQuery(window).trigger('resize').trigger('scroll');
+```
+
+### Using inner HTML for complex content
+
+You can use the following syntax to enable complex content for the parallax:
+
+```html
+<div class="parallax-window">
+  <div class="parallax-slider">
+    <span style="position:absolute; top: 400px; left: 400px;">Some Text</span>
+	<p>Some other Content</p>
+  </div>
+</div>
+```
+Please note, that the div with class "parallax-slider" is essential here.
+
+You then need to initialize it through JS and provide the naturalWidth and naturalHeight options in order to be rendered correctly.
+
+```
+$('.parallax-window').parallax({
+    naturalWidth: 600,
+    naturalHeight: 400
+  });
+```
+
+This also makes it possible to use responsive images in the slider:
+
+```html
+<div class="parallax-window">
+  <div class="parallax-slider">
+    <img src="/path/to/image.jpg" srcset="/path/to/image-400px.jpg 400w, /path/to/image-800px.jpg 800w, /path/to/image-1200px.jpg 1200w" sizes="100vw">
+  </div>
+</div>
+```
 
 ## Options
 
@@ -115,6 +192,18 @@ Note that when specifying these options as html data-attributes, you should conv
 			<td>true</td>
 			<td>If true, this option will set the parallax image as a static, centered background image whenever it detects an Android user agent. Disable this if you wish to enable the parallax scrolling effect on Android devices.</td>
 		</tr>
+		<tr>
+			<td>overScrollFix</td>
+			<td>boolean</td>
+			<td>false</td>
+			<td>(Experimental) If true, will freeze the parallax effect when "over scrolling" in browsers like Safari to prevent unexpected gaps caused by negative scroll positions.</td>
+		</tr>
+		<tr>
+			<td>mirrorContainer</td>
+			<td>jQuery Selector</td>
+			<td>body</td>
+			<td>The parallax mirror will be prepended into this container.</td>
+		</tr>
 	</tbody>
 </table>
 
@@ -132,7 +221,7 @@ LICENSE
 
 The MIT License (MIT)
 
-Copyright (c) 2015 PixelCog Inc.
+Copyright (c) 2016 PixelCog Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
