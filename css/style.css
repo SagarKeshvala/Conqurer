@@ -243,3 +243,73 @@ footer {
     font-size: 1.5rem;
     color: #666666;
 }
+
+@media only screen and (max-width: 1024px) {
+    .heading {
+        top: 38%;
+    }
+    .service-title {
+        margin-top: 15rem;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+      .about-btn {
+          margin-left: 5% !important;
+      }
+      .small-card-body {
+          margin-top: 5rem;
+      }
+  }
+
+  @media only screen and (max-width: 512px) {
+      .heading {
+          left: 50%;
+          top: 35%
+      }
+      .hero-text {
+          font-size: 4rem;
+      }
+      .sub-hero-text {
+          font-size: 2rem;
+      }
+      .card {
+          padding: 0 !important;
+          text-align: center;
+      }
+      .card-text-container {
+          text-align: center;
+      }
+      .service-head {
+          top: 40%;
+          width: 100%;
+          padding: 0;
+          margin: 0;
+          height: 70vh;
+      }
+      .service-title {
+          font-size: 4rem;
+          margin-top: 3rem; 
+      }
+      .small-card-body {
+          margin-top: 1.5rem;
+      }
+      .big-card-body {
+          margin-top: 3rem;
+      }
+      .contact-form-left {
+          float: none;
+      }
+      .contact-form-right {
+          float: none;
+      }
+      input {
+          margin: 1rem auto;
+      }
+      textarea {
+          margin: 1rem auto;
+      }
+      button {
+          margin: 1rem auto;
+      }
+  }
